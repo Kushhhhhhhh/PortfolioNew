@@ -24,10 +24,10 @@ const HomePage = () => {
   {/* LEFT (Text) */}
   <div className="md:w-1/2 p-8 text-center md:text-left">
     <div id="typed-strings">
-      <h3 className="text-slate-300 text-4xl md:text-5xl lg:text-4xl sm:text-xl font-medium font-serif mb-4">
-        Hey, My name is <span className="text-white font-bold">Kush Sharma,</span>
+      <h3 className="text-slate-300 text-4xl md:text-5xl lg:text-4xl sm:text-xl font-medium font-serif mb-6">
+       Hey, My name is <span className="text-white font-bold">Kush Sharma,</span>
       </h3>
-      <h3 className="text-slate-300 text-4xl md:text-5xl lg:text-4xl sm:text-base font-medium font-serif mb-4">
+      <h3 className="text-slate-300 text-4xl md:text-5xl lg:text-4xl sm:text-base font-medium font-serif mb-6">
         I'm a <span id="typed" className="text-slate-200"></span>
       </h3>
       <p className="text-lg md:text-base">
