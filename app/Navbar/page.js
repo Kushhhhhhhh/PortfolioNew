@@ -1,8 +1,15 @@
 import Link from 'next/link'
 
 const Navbar = () => {
-
-  const handleClick = () => {}
+const handleClick = (saveResume) => {
+  function saveResume() {
+    setSaving(true)
+    var doc = new jsPDF('portrait', 'px', 'a4', false)
+    doc.addImage('https://i.ibb.co/b560J4C/resume-1.png', 'PNG')
+    doc.save('resume.pdf')
+    setSaving(false)
+  }
+}
 
   return <>
   <header>
@@ -16,12 +23,8 @@ const Navbar = () => {
         <li  className="text-white text-base hover:text-slate-300 hover:font-bold"><Link href="/contact">Contact</Link></li>
       </ul>
       <li className="text-white text-base hover:text-slate-300 hover:font-bold list-none">
-        <button
-          className="btn btn-active btn-neutral text-white text-base hover:font-bold"
-          onClick={handleClick}
-        >
-          Download CV
-        </button>
+      <button onClick={handleClick}>Download CV</button>
+  
       </li>
     </div>
   </nav>
