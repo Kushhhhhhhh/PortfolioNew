@@ -4,8 +4,8 @@ const About = () => {
   return (
   <>
    <main>
-      
-   </main> 
+    
+   </main>
   </>
   )
 }
