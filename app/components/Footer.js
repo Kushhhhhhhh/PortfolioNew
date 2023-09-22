@@ -14,16 +14,16 @@ const Footer = () => {
       </aside>
       <nav className="flex gap-4">
         <Link href="mailto:kush.73888@gmail.com" passHref suppressHydrationWarning>
-          <a><EmailIcon /></a>
+          <EmailIcon />
         </Link>
         <Link href="https://www.linkedin.com/in/kushSharma738" passHref suppressHydrationWarning>
-          <a><LinkedInIcon /></a>
+          <LinkedInIcon />
         </Link>
         <Link href="https://github.com/kushhhhhhhh" passHref suppressHydrationWarning>
-          <a><GitHubIcon /></a>
+          <GitHubIcon />
         </Link>
         <Link href="https://www.instagram.com/kushhhhhhh._/?hl=en" passHref suppressHydrationWarning>
-          <a><InstagramIcon /></a>
+          <InstagramIcon />
         </Link>
       </nav>
     </footer>
