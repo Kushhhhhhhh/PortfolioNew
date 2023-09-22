@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect } from 'react';
 import Typed from 'typed.js';
+import Footer from '../components/Footer';
 
 const HomePage = () => {
   useEffect(() => {
@@ -34,11 +35,15 @@ const HomePage = () => {
       <p className="text-lg md:text-base">
         The thrill of crafting captivating and interactive webpages fuels my creativity and inspires me to push the boundaries of what's possible. Let's connect and create something amazing together.
       </p>
+      <br />
+      <button className='btn btn-active btn-neutral border-slate-800 hover:font-bold hover:drop-shadow-2xl'>
+        Let's talk!
+      </button>
     </div>
   </div>
 
   {/* RIGHT (Image) */}
-  <div className="md:w-1/2 p-4 flex justify-center items-center">
+  <div className="md:w-1/2 p-8 flex justify-center items-center">
     <img
       src="https://imagetolink.com/ib/8tLmIl9Zg8.png"
       alt="kush-logo"
@@ -47,7 +52,7 @@ const HomePage = () => {
     />
   </div>
 </main>
-  <hr />
+  <Footer />
   </>
   );
 }
