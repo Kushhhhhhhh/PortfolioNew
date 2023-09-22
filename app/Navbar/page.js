@@ -2,7 +2,14 @@
 import Link from 'next/link'
 
 const Navbar = () => {
- const handleClick = () => {}
+ const handleClick = () => {
+     const link = document.createElement('a');
+     link.href = 'https://i.ibb.co/jfhXySH/resume.png';
+     link.download = 'resume.png';
+     document.body.appendChild(link);
+     link.click();
+     document.body.removeChild(link);
+ }
  
   return <>
   <header>
