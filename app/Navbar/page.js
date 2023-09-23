@@ -22,9 +22,7 @@ const Navbar = () => {
         <li  className="text-white text-base hover:text-slate-300 hover:font-bold"><Link href="/projects">Projects</Link></li>
         <li  className="text-white text-base hover:text-slate-300 hover:font-bold"><Link href="/contact">Contact</Link></li>
       </ul>
-      <li className="text-white text-base hover:text-slate-300 hover:font-bold list-none">
       <button className='btn btn-active btn-neutral hover:font-bold' onClick={handleClick}>Download CV</button>
-      </li>
     </div>
   </nav>
 </header>

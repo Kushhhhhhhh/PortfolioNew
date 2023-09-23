@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Typed from 'typed.js';
 import Footer from '../components/Footer';
 
