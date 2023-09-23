@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link'
-import Navbar from './Navbar/page';
+import Navbar from './components/Navbar';
 import HomePage from './HomePage/page';
 
 export default function Home() {

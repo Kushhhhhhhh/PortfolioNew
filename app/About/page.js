@@ -1,10 +1,12 @@
 'use client'
 import React from 'react'
-import Footer from '../components/Footer';
+import Navbar from '../components/Navbar.js';
+import Footer from '../components/Footer.js';
 
 const About = () => {
   return (
   <>
+  <Navbar />
 <main className="w-full min-h-screen container mx-auto py-8">
   <h1 className="text-4xl font-bold mb-4 text-center">About Me</h1>
 
