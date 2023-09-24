@@ -20,6 +20,10 @@ const HomePage = () => {
     };
   }, []);
 
+  const handleClick = () => {
+    window.location.href = '/contact'; 
+  }
+
   return (
     <>
     <main className="w-full min-h-screen flex flex-col-reverse md:flex-row items-center md:items-center">
@@ -36,7 +40,10 @@ const HomePage = () => {
         The thrill of crafting captivating and interactive webpages fuels my creativity and inspires me to push the boundaries of what's possible. Let's connect and create something amazing together.
       </p>
       <br />
-      <button className='btn btn-active btn-neutral border-slate-800 hover:font-bold hover:drop-shadow-2xl'>
+      <button 
+      className='btn btn-active btn-neutral border-slate-800 hover:font-bold hover:drop-shadow-2xl'
+      onClick={handleClick}
+      >
         Let's talk!
       </button>
     </div>
