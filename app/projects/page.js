@@ -6,87 +6,115 @@ import ProjectCard from '../components/ProjectCard.js';
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState('All'); 
-
-  const handleTabClick = (tabName) => {
-    setActiveTab(tabName);
- 
-    console.log('Selected tab:', tabName);
-  };
+  
   const projectsData = [
     {
       projectName: "KiK's - Make Friends",
       description: "Kiks - Make Friends is a revolutionary social app connecting people worldwide, fostering genuine connections and meaningful friendships effortlessly.",
-      imageUrl: "https://i.ibb.co/nntzPMw/kik.png",
-      languagesUsed: ["React + Redux", "Tailwind CSS"], 
+      imageUrl: "https://i.ibb.co/yFj6DFG/kik.jpg",
+      tab: 'Web Development',
+      languagesUsed: ["React + Redux", "Tailwind CSS"],
+      link: "https://github.com/Kushhhhhhhh/KiK-s",
+      live: "https://kiks-makefriends-5of8ouwhw-kushhhhhhhh.vercel.app" 
     },
     {
       projectName: "SumZ - Article Summarizer",
-      description: "Sumz, the cutting-edge AI article summarizer, condenses lengthy content into concise insights, enhancing efficiency and comprehension effortlessly.",
-      imageUrl: "https://i.ibb.co/Lzddzgd/sumz.png",
+      description: "Sumz, an innovative AI article summarizer, condenses lengthy texts into succinct summaries, extracting key insights and central themes.",
+      imageUrl: "https://i.ibb.co/Yj3DJn2/sumz.jpg",
+      tab: 'Web Development',
       languagesUsed: ["React + Redux", "Tailwind CSS"],
+      link: "https://github.com/Kushhhhhhhh/AI-Summarizer",
+      live: "https://article-ai-summarizer.netlify.app"
     },
     {
       projectName: "Sushi Delight",
-      description: "Sushi Delight, the go-to food order website, offers an array of delectable sushi options for a delightful culinary experience.",
-      imageUrl: "https://i.ibb.co/1LX3DQS/sushi.png",
-      languagesUsed: ["HTML", "CSS", "JavaScript"], 
+      description: "Sushi Delight is your go-to destination for exquisite sushi experiences.Our food ordering website offers range of freshly prepared sushi.",
+      imageUrl: "https://i.ibb.co/1ngnVR2/sushi.png",
+      tab: 'Web Design',
+      languagesUsed: ["HTML", "CSS", "JavaScript"],
+      link: "https://github.com/Kushhhhhhhh/sushi",
+      live: "https://sushi-delight.netlify.app" 
     },
     {
       projectName: "Bubble Game",
-      description: "In Bubble Game, strategically hatch bubbles with the right numbers, aiming for high scores and a thrilling gaming experience.",
-      imageUrl: "https://i.ibb.co/Z840wqg/bubble.png",
-      languagesUsed: ["HTML", "CSS", "JavaScript"], 
+      description: "Bubble Game is an engaging experience where players hatch bubbles to reveal numbers, aiming to match them for a perfect score of 10 points.",
+      imageUrl: "https://i.ibb.co/LNKsMWk/bubble.jpg",
+      tab: 'Games',
+      languagesUsed: ["HTML", "CSS", "JavaScript"],
+      link: "https://github.com/Kushhhhhhhh/Bubble-Game",
+      live: "https://hatchbubbles.netlify.app" 
     },
     {
       projectName: "Weather Buddy",
-      description: "Weather Buddy, your reliable weather app, offers accurate forecasts and helpful weather insights, ensuring you're prepared for any climate changes.",
-      imageUrl: "https://i.ibb.co/BKZCp6S/weather.png",
-      languagesUsed: ["HTML", "CSS", "JavaScript"], 
+      description: "Weather Buddy is a user-friendly weather app designed to provide real-time weather updates and forecasts.It keeps users informed and prepared for changing weather conditions.",
+      imageUrl: "https://i.ibb.co/PtbyCTr/weather.jpg",
+      tab: 'Web Development',
+      languagesUsed: ["HTML", "CSS", "JavaScript"],
+      link: "https://github.com/Kushhhhhhhh/Weather-App",
+      live: "https://city-weatherbuddy.netlify.app" 
     },
   ];
+
+  const [filteredProjects, setFilteredProjects] = useState(projectsData);
+
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+ 
+    if (tabName === 'All') {
+      setFilteredProjects(projectsData);
+    } else {
+      const filteredProjectsByTab = projectsData.filter(
+        (project) => project.tab === tabName
+      );
+      setFilteredProjects(filteredProjectsByTab);
+    }
+  };
 
   return (
     <>
       <Navbar />
-      <main className='w-full min-h-screen'>
-        <div className="tabs flex justify-center m-8">
-          <button
-            className={`tab tab-bordered ${activeTab === 'All' ? 'tab-active' : ''}`}
-            onClick={() => handleTabClick('All')}
-          >
-            All
-          </button>
-          <button
-            className={`tab tab-bordered ${activeTab === 'Web Development' ? 'tab-active' : ''}`}
-            onClick={() => handleTabClick('Web Development')}
-          >
-            Web Development
-          </button>
-          <button
-            className={`tab tab-bordered ${activeTab === 'Web Design' ? 'tab-active' : ''}`}
-            onClick={() => handleTabClick('Web Design')}
-          >
-            Web Design
-          </button>
-          <button
-            className={`tab tab-bordered ${activeTab === 'Games' ? 'tab-active' : ''}`}
-            onClick={() => handleTabClick('Games')}
-          >
-            Games
-          </button>
-        </div>
-        <div className="project-cards">
-          {projectsData.map((project, index) => (
-            <ProjectCard
-              key={index}
-              projectName={project.projectName}
-              description={project.description}
-              imageUrl={project.imageUrl}
-              languagesUsed={project.languagesUsed}
-            />
-          ))}
-        </div>
-      </main>
+      <main className="w-full min-h-screen flex flex-col items-center">
+  <div className="tabs flex flex-wrap justify-center m-4">
+    <button
+      className={`tab tab-bordered ${activeTab === 'All' ? 'tab-active' : ''}`}
+      onClick={() => handleTabClick('All')}
+    >
+      All
+    </button>
+    <button
+      className={`tab tab-bordered ${activeTab === 'Web Development' ? 'tab-active' : ''}`}
+      onClick={() => handleTabClick('Web Development')}
+    >
+      Web Development
+    </button>
+    <button
+      className={`tab tab-bordered ${activeTab === 'Web Design' ? 'tab-active' : ''}`}
+      onClick={() => handleTabClick('Web Design')}
+    >
+      Web Design
+    </button>
+    <button
+      className={`tab tab-bordered ${activeTab === 'Games' ? 'tab-active' : ''}`}
+      onClick={() => handleTabClick('Games')}
+    >
+      Games
+    </button>
+  </div>
+  <div className="project-cards flex flex-wrap justify-center gap-4 p-4">
+  {filteredProjects.map((project, index) => (
+    <div className="card-container text-slate-300 font-normal" key={index}>
+      <ProjectCard
+        projectName={project.projectName}
+        description={project.description}
+        imageUrl={project.imageUrl}
+        languagesUsed={project.languagesUsed}
+        link={project.link}
+        live={project.live}
+      />
+    </div>
+  ))}
+</div>
+</main>
       <Footer />
     </>
   );
