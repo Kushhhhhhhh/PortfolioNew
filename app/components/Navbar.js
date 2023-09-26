@@ -18,7 +18,7 @@ const Navbar = () => {
       <h3 className="text-4xl font-bold text-white font-mono text-center md:text-left sm:text-3xl">Kush Sharma</h3>
       <ul className="flex space-x-4">
       <li className="text-white text-base hover:text-slate-300 hover:font-bold"><Link href="/">Home</Link></li>
-        <li className="text-white text-base hover:text-slate-300 hover:font-bold"><Link href="/about">About</Link></li>
+        <li className="text-white text-base hover:text-slate-300 hover:font-bold"><Link href="/About">About</Link></li>
         <li  className="text-white text-base hover:text-slate-300 hover:font-bold"><Link href="/skills">Skills</Link></li>
         <li  className="text-white text-base hover:text-slate-300 hover:font-bold"><Link href="/projects">Projects</Link></li>
         <li  className="text-white text-base hover:text-slate-300 hover:font-bold"><Link href="/contact">Contact</Link></li>
