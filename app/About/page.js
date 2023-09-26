@@ -7,6 +7,7 @@ const About = () => {
   return (
   <>
   <Navbar />
+
 <main className="w-full min-h-screen container mx-auto py-8">
   <h1 className="text-4xl font-bold mb-4 text-center">About Me</h1>
 
@@ -71,6 +72,7 @@ const About = () => {
     </div>
   </div>
 </main>
+
 <Footer />
   </>
   )
